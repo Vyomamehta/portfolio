@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyoma Mehta - UI/UX Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Roboto:wght@300;400;700&family=Georgia&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #D3D3D3;
+            color: #2F4F4F;
+            line-height: 1.6;
+            transition: background-color 0.3s ease;
+        }
+
+        h1, h2 {
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, #4C6A6A, #FF6F61);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 2px solid #fff;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            letter-spacing: 3px;
+            color: #fff;
+        }
+        header p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #D3D3D3;
+            padding: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            margin: 0 30px;
+            text-decoration: none;
+            color: #2C3E50;
+            font-weight: 600;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        nav a:hover {
+            color: #FF6F61;
+            transform: scale(1.1);
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #2C3E50;
+            transition: width 0.3s;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -5px;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Section Styles */
+        .section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+        .section h2 {
+            text-align: center;
+            color: #4C6A6A;
+            font-size: 3rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+            position: relative;
+        }
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: #4C6A6A;
+            margin: 10px auto 0;
+            border-radius: 5px;
+        }
+
+        /* About Me Section */
+        .about p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-top: 15px;
+            color: #333333;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        /* Projects Section */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+        .card {
+            background: #FF6F61;
+            color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s, filter 0.3s ease;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            text-transform: uppercase;
+        }
+        .card h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .card p {
+            font-size: 1.1rem;
+            margin-top: 15px;
+            color: #fff;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            filter: brightness(1.1);
+        }
+
+        /* Contact Section */
+        .contact p {
+            font-size: 1.2rem;
+            color: #333333;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background: #4C6A6A;
+            color: white;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* Hover Effect */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3rem;
+            }
+            header p {
+                font-size: 1.2rem;
+            }
+            .section {
+                padding: 30px;
+            }
+            .projects {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vyoma Mehta</h1>
+        <p>UI/UX Designer | Full Stack Developer | IoT Innovator</p>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="section about" id="about">
+        <h2>About Me</h2>
+        <p>
+            Hello! I'm Vyoma Mehta, an Electronics and Communication Engineer with a specialization in UI/UX design and IoT systems. 🌟
+            I blend my technical expertise with creative design to develop seamless, user-friendly interfaces. My journey has been fueled by a passion for innovation, and I strive to create intuitive experiences that make technology accessible and impactful. Whether it's developing cutting-edge IoT solutions or designing engaging websites, I believe in the power of design to elevate technology and make a difference in the world. 🚀
+        </p>
+    </div>
+
+    <div class="section projects" id="projects">
+        <h2>Projects</h2>
+        <div class="card">
+            <h3>Smart Belt Health Monitoring System</h3>
+            <p>An award-winning IoT project designed to monitor health metrics and ensure safety. 🏅</p>
+        </div>
+        <div class="card">
+            <h3>Pitch Zone</h3>
+            <p>A platform for pitching innovative ideas to potential investors, developed with modern web technologies. 💡</p>
+        </div>
+        <div class="card">
+            <h3>Seni Mitra</h3>
+            <p>A Python-based solution connecting senior citizens to foster meaningful interactions. 🧓👵</p>
+        </div>
+    </div>
+
+    <div class="section experience" id="experience">
+        <h2>Experience</h2>
+        <div class="card">
+            <h3>HAL Internship</h3>
+            <p>Worked on DO-254 hardware development, gaining in-depth knowledge of aerospace-grade systems. ✈️</p>
+        </div>
+        <div class="card">
+            <h3>Samsung Hackathon</h3>
+            <p>Developed a website for senior citizens, showcasing intuitive design and user-friendly navigation. 💻</p>
+        </div>
+    </div>
+
+    <div class="section contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:vyomamehta023@gmail.com">vyomamehta023@gmail.com</a> 📧</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/vyoma-mehta-6ab6a426a/" target="_blank">https://www.linkedin.com/in/vyoma-mehta-6ab6a426a/</a> 🌐</p>
+        <p>GitHub: <a href="https://github.com/Vyomamehta" target="_blank">https://github.com/Vyomamehta</a> 🖥️</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Vyoma Mehta. Designed with creativity and passion. ✨</p>
+    </footer>
+</body>
+</html>
+
+
